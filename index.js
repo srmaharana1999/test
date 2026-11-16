@@ -1,3 +1,4 @@
+import { httpServerHandler } from "cloudflare:node";
 import express from "express";
 
 const app = express();
@@ -11,3 +12,5 @@ app.get("/api/health", (req, res) => {
 app.listen(port, () => {
   console.log("Express server started");
 });
+
+export default httpServerHandler({ port });
